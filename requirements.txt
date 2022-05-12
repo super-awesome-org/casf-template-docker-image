@@ -7,3 +7,4 @@ pyparsing==3.0.9
 typing_extensions==4.2.0
 userpath==1.8.0
 zipp==3.8.0
+Jinja2==3.0.3
