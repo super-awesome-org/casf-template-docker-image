@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Set up Docker Buildx
-        id: buildx
         uses: docker/setup-buildx-action@v1
 
       - name: Login to Github Packages
@@ -25,10 +25,8 @@ jobs:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
         with:
-          context: .
-          tags: |
-            ghcr.io/telia-company/casf/template:latest
-          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: ghcr.io/telia-company/casf/template:latest
+          push: true
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
