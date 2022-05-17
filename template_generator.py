@@ -1,16 +1,14 @@
 """
-Script to automatically create a release branch
-from an identified baseline release candidate
+Create template with copier
 """
 
 import argparse
-import json
 from copier import run_auto
 
 
 def parse_args():
     """Parse args"""
-    parser = argparse.ArgumentParser(description='Create branch')
+    parser = argparse.ArgumentParser(description='Create GitHub repository')
     parser.add_argument(
         '--template',
         action='store',
@@ -43,7 +41,6 @@ def main():
     """Main function"""
     args = parse_args()
     data = {}
-    print(args.data)
     for i in ' '.join(args.data).split(','):
         data[i.split('=')[0]]=i.split('=')[1]
     run_auto(src_path=args.template, dst_path=args.dest, data=data)
