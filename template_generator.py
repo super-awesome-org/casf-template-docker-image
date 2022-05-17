@@ -43,6 +43,7 @@ def main():
     """Main function"""
     args = parse_args()
     data = {}
+    print(args.data)
     for i in args.data.split(','):
         data[i.split('=')[0]]=i.split('=')[1]
     run_auto(src_path=args.template, dst_path=args.dest, data=data)
