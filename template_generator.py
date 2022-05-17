@@ -31,7 +31,8 @@ def parse_args():
         action='store',
         required=True,
         dest='data',
-        help=''
+        help='',
+        nargs='+'
     )
     args = parser.parse_args()
 
