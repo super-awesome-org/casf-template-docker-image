@@ -1,1 +1,2 @@
-echo '{"projectName": "CASF Test", "groupName": "Test Group"}' | python -m json.tool
+echo projectName=CASF Test
+echo groupName=Test Group
