@@ -32,6 +32,14 @@ def parse_args():
         help='',
         nargs='+'
     )
+    parser.add_argument(
+        '--update',
+        action='store_true',
+        required=False,
+        dest='update',
+        help='',
+        nargs='+'
+    )
     args = parser.parse_args()
 
     return args

@@ -10,3 +10,5 @@ COPY terraform .
 COPY input.sh .
 COPY template_generator.py .
 ENV PATH $PATH:/root/.local/bin
+RUN python -m pylint *.py --disable too-many-arguments --disable too-many-locals
+RUN pip uninstall pylint -y
